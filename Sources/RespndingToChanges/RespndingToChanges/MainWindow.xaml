@@ -1,0 +1,19 @@
+﻿<Window x:Class="RespndingToChanges.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RespndingToChanges"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Right">
+            <Button Name="btnAdd" Content="Add" Margin="5,10,5,5"></Button>
+            <Button Name="btnEdit" Content="Edit" Margin="5,10,5,5"></Button>
+            <Button Name="btnDelete" Content="Delete" Margin="5,10,5,5"></Button>
+        </StackPanel>
+        <ListBox Name="lbxPersonnel" DisplayMemberPath="Name"></ListBox>
+    </DockPanel>
+
+</Window>
