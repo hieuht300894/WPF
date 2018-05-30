@@ -10,20 +10,20 @@ namespace MindMapDemo.HousePlan
     {
         public static Random random = new Random();
 
-        public static List<Color> Colors; 
+        public static List<Color> Colors;
 
         public static Node GetRandomNode()
         {
             var nodenumber = random.Next(0, 100);
             var nodename = "Node" + nodenumber;
             var node = new Node
-                {
-                    Size = {Value = new Point(150,120)},
-                    Name = nodename,
-                    ShortName = "N" + nodenumber,
-                    Location = { Value = new Point(random.Next(0, 500), random.Next(0, 500)) },
-                    Color = Colors[random.Next(0, Colors.Count - 1)],
-                };
+            {
+                Size = { Value = new Point(150, 120) },
+                Name = nodename,
+                ShortName = "N" + nodenumber,
+                Location = { Value = new Point(random.Next(0, 500), random.Next(0, 500)) },
+                //Color = Colors[random.Next(0, Colors.Count - 1)],
+            };
 
 
             node.Snaps.AddRange(new[]
@@ -48,12 +48,12 @@ namespace MindMapDemo.HousePlan
             var result = new List<Connector>();
             for (int i = 0; i < nodes.Count() - 1; i++)
             {
-                result.Add(new Connector() 
+                result.Add(new Connector()
                 {
-                    Start = nodes[i].Snaps[random.Next(0,3)], 
-                    End = nodes[i + 1].Snaps[random.Next(0,3)],
+                    Start = nodes[i].Snaps[random.Next(0, 3)],
+                    End = nodes[i + 1].Snaps[random.Next(0, 3)],
                     Name = "Connector" + random.Next(1, 100).ToString(),
-                    Color = Colors[random.Next(0, Colors.Count - 1)],
+                    //Color = Colors[random.Next(0, Colors.Count - 1)],
                 });
             }
             return result;

@@ -122,7 +122,7 @@
                 </DataTemplate>
 
                 <!-- This is the DataTemplate that will be used to render the Connector class -->
-                <DataTemplate DataType="{x:Type local2:Connector}">
+                <!--<DataTemplate DataType="{x:Type local2:Connector}">
                     <Grid>
                         <Path StrokeThickness="3" x:Name="Line">
                             <Path.Stroke>
@@ -132,8 +132,8 @@
                                 <PathGeometry>
                                     <PathFigure StartPoint="{Binding Start.Location.Value}">
                                         <QuadraticBezierSegment  
-                                                   Point1="{Binding MidPoint.Value}"
-                                                   Point2="{Binding End.Location.Value}" />
+                                            Point1="{Binding MidPoint.Value}"
+                                            Point2="{Binding End.Location.Value}" />
                                     </PathFigure>
                                 </PathGeometry>
                             </Path.Data>
@@ -158,7 +158,25 @@
                             </DataTrigger.ExitActions>
                         </DataTrigger>
                     </DataTemplate.Triggers>
+                </DataTemplate>-->
+
+                <DataTemplate DataType="{x:Type local2:Connector}">
+                    <Grid>
+                        <Path Stroke="Black" StrokeThickness="2" Name="scribblePath">
+                            <Path.Data>
+                                <PathGeometry x:Name="scribbleGeometry">
+                                    <PathGeometry.Figures>
+                                        M 20,20 C 150,0 0,150 300,30
+                                        <!--L 150,30 C 60,200 200,150 200,60
+                                        M 70,140 L 150,240 180,170 30,200
+                                        M 270,70 L 270,230 200,200--> 
+                                    </PathGeometry.Figures>
+                                </PathGeometry>
+                            </Path.Data>
+                        </Path>
+                    </Grid>
                 </DataTemplate>
+
 
                 <!-- This is the DataTemplate that will be used to render the SnapSpot class -->
                 <DataTemplate DataType="{x:Type local2:SnapSpot}">
@@ -170,10 +188,7 @@
                                     <Path.Data>
                                         <PathGeometry>
                                             <PathFigure StartPoint="-5,0">
-                                                <ArcSegment IsLargeArc="True"
-                                                            Size="5, 5"
-                                                            Point="5, 0"
-                                                            SweepDirection="Clockwise" />
+                                                <ArcSegment IsLargeArc="True"  Size="5, 5"   Point="5, 0"  SweepDirection="Clockwise" />
                                             </PathFigure>
                                         </PathGeometry>
                                     </Path.Data>

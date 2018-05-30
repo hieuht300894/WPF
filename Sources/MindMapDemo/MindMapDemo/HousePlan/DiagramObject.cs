@@ -2,7 +2,7 @@ using System.Windows.Media;
 
 namespace MindMapDemo.HousePlan
 {
-    public abstract class DiagramObject:PropertyChangedBase
+    public abstract class DiagramObject : PropertyChangedBase
     {
         private string _name;
         public string Name
@@ -46,6 +46,6 @@ namespace MindMapDemo.HousePlan
             }
         }
 
-        public Color Color { get; set; }
+        public Color Color { get; set; } = Colors.Blue;
     }
 }
